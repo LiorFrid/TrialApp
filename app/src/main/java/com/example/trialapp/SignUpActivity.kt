@@ -14,16 +14,28 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
         auth = FirebaseAuth.getInstance()
-        val signUpBtn = findViewById<Button>(R.id.signupBtn)
+        val EmailTextFill = findViewById<TextView>(R.id.Email)
+        val PasswordTextFill = findViewById<TextView>(R.id.Password)
+        val signUpBtn = findViewById<Button>(R.id.RegisterBtn)
+        val backToLogin:TextView  = findViewById<TextView>(R.id.backToLogin)
+        EmailTextFill.setOnClickListener{ EmailTextFill.text=""}
+        PasswordTextFill.setOnClickListener{ PasswordTextFill.text=""}
         signUpBtn.setOnClickListener{signUpBtnClicked()}
+        backToLogin.setOnClickListener{ backToLoginTextClicked()}
+
     }
 
     private fun signUpBtnClicked() {
-        val mail = findViewById<TextView>(R.id.emailRegTxt).text.toString()
-        val pass = findViewById<TextView>(R.id.passRegTxt).text.toString()
+        val mail = findViewById<TextView>(R.id.Email).text.toString()
+        val pass = findViewById<TextView>(R.id.Password).text.toString()
         auth.createUserWithEmailAndPassword(mail,pass).addOnCompleteListener {
             val int = Intent(this, MainActivity::class.java )
             startActivity(int)
         }
+    }
+
+    private fun backToLoginTextClicked(){
+        val intent = Intent(this,MainActivity::class.java)
+        startActivity(intent)
     }
 }
