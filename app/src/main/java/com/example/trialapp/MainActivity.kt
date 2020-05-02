@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         EmailTextFill.setOnClickListener { EmailTextFill.text = "" }
 
         PasswordTextFill.setOnClickListener { PasswordTextFill.text = "" }
-
+        //startActivity(Intent(this, LandingScreen::class.java))
         LoginBtn.setOnClickListener { this.loginBtnClicked() }
         RegisterText.setOnClickListener { RegisterTextClicked() }
 
