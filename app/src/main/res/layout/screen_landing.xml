@@ -16,13 +16,13 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/newsBtn"
         android:layout_width="108dp"
         android:layout_height="83dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="40dp"
-        android:text="Button"
+        android:text="כותרות"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />/>
 

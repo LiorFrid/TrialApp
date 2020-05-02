@@ -9,15 +9,19 @@ class LandingScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.screen_landing)
-        val NewsBtn = findViewById<Button>(R.id.newsButton)
+        val NewsBtn = findViewById<Button>(R.id.newsBtn)
 
         NewsBtn.setOnClickListener{GoToNewsScreen()}
+
     }
 
     private fun GoToNewsScreen() {
         val intent = Intent(this, NewsScreen::class.java)
         startActivity(intent)
+
     }
+
 }
+
 
 
