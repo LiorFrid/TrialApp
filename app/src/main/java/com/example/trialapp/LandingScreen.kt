@@ -10,9 +10,16 @@ class LandingScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.screen_landing)
         val NewsBtn = findViewById<Button>(R.id.newsBtn)
+        val pillsBtn = findViewById<Button>(R.id.pillsBtn)
 
-        NewsBtn.setOnClickListener{GoToNewsScreen()}
+        NewsBtn.setOnClickListener { GoToNewsScreen() }
+        pillsBtn.setOnClickListener { GoToPillsScreen() }
 
+    }
+
+    private fun GoToPillsScreen() {
+        val intent = Intent(this, PillsActivity::class.java)
+        startActivity(intent)
     }
 
     private fun GoToNewsScreen() {
